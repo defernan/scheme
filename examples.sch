@@ -6,17 +6,21 @@
 				(cons (car list1) (merge-lists (cdr list1) list2))
 				(cons (car list2) (merge-lists (cdr list2) list1))))))
 
-(define isort (lambda (l)
-	(letrec
-		((insert (lambda (x l)
-			(if (null? l)
-				(list x)
-				(if (<= x (car l))
-					(cons x l)
-					(cons (car l) (insert x (cdr l))))))))
-	(if (null? l)
-		nil
-		(insert (car l) (isort (cdr l)))))))
+(define (insert x lst)
+  (if (null? lst)
+      (list x)
+      (let ((y (car lst))
+            (ys (cdr lst)))
+        (if (<= x y)
+            (cons x lst)
+            (cons y (insert x ys))))))
+ 
+(define (insertion-sort lst)
+  (if (null? lst)
+      '()
+      (insert (car lst)
+              (insertion-sort (cdr lst)))))
+ 
 
 
 (define read-word
