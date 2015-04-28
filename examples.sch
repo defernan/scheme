@@ -38,3 +38,6 @@
 
 "call (merge-lists '(1 5 7 9) '(2 3 4 6))"
 (merge-lists '(1 5 7 9) '(2 3 4 6))
+
+"call (insertion-sort '(9 8 7 6 5 4 3 2 1)"
+(insertion-sort '(9 8 7 6 5 4 3 2 1))
