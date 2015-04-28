@@ -1,3 +1,4 @@
+#lang scheme
 (define merge-lists
 	(lambda (list1 list2)
 		(if (null? list1)
@@ -34,3 +35,6 @@
              (read-char p)
              (cons c (f)))
             (else '())))))))
+
+"call (merge-lists '(1 5 7 9) '(2 3 4 6))"
+(merge-lists '(1 5 7 9) '(2 3 4 6))
