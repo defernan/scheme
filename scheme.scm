@@ -29,6 +29,9 @@
 (define my_account (create-account 20))
 "call (my_account 20)"
 (my_account 20)
+"call (define balance 80)"
+(define balance 80)
 "call (my_account -40)"
 (my_account -40)
+
 
