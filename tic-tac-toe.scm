@@ -129,10 +129,15 @@
         ; continue game
         [else (begin
                 (display (string-append "Select a square (1 - 9), " (symbol->string player) ": "))
+                ; get next move selection
                 (let ((answer (string->number (regexp-replace* #px"\\s*" (read-line) ""))))
-                  (if (and answer (space-available? answer board)) 
+                  (if (and answer (space-available? answer board))
+                      ; valid
                       (play (move player answer board) (next-player player))
-                      (play board player))))]))))
+                      ; invalid
+                      ((begin
+                         (display "\nInvalid choice\n")
+                         (play board player))))))]))))
 
 
 ; Start the game
